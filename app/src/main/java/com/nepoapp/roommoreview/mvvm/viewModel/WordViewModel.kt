@@ -18,7 +18,7 @@ class WordViewModel(application: Application) : AndroidViewModel(application){
     private lateinit var _words : MutableLiveData<List<Word>>
 
     init {
-        dbInstance = WordRoomDatabase.getDatabase(application.applicationContext)!!
+        dbInstance = WordRoomDatabase.getDatabase(application.applicationContext,viewModelScope)!!
         wordRepository = WordRepository(dbInstance.wordDao())
 
     }

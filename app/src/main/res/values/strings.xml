@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RoomMoreView</string>
+
+    <string name="hint_word">Nova palavra</string>
+    <string name="button_save">Salvar</string>
+    <string name="empty_not_saved">Impossível inserir uma palavra vazia.</string>
 </resources>
