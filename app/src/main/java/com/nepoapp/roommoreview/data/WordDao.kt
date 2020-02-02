@@ -1,10 +1,11 @@
-package com.nepoapp.roommoreview
+package com.nepoapp.roommoreview.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.nepoapp.roommoreview.domain.Word
 
 @Dao
 interface WordDao {

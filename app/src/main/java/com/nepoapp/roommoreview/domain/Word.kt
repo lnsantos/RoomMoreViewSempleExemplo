@@ -1,4 +1,4 @@
-package com.nepoapp.roommoreview
+package com.nepoapp.roommoreview.domain
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

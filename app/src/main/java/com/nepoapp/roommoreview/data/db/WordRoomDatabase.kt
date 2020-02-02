@@ -1,9 +1,11 @@
-package com.nepoapp.roommoreview
+package com.nepoapp.roommoreview.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.nepoapp.roommoreview.data.WordDao
+import com.nepoapp.roommoreview.domain.Word
 
 @Database(entities = [Word::class], version = 1, exportSchema = false)
 abstract class WordRoomDatabase : RoomDatabase(){
