@@ -36,9 +36,8 @@ class AddWordBottomShetFragment : BottomSheetDialogFragment(){
     }
 
     private fun listenerSaveNewWord() = View.OnClickListener {
-        if (edit_word.text.isNotBlank()){
+
             viewModel.insertWord(Word(edit_word.text.trim().toString()))
             dismiss()
-        }
     }
 }

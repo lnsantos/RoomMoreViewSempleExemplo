@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observersActions() {
-        viewModel.getWords().observe(this,observerWords())
+        viewModel.getWords()?.observe(this,observerWords())
     }
 
     private fun listener() {
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    private fun observerWords() = Observer<List<Word>> {
+    private fun observerWords(): Observer<in List<Word>?> = Observer {
         it?.let {
             adapterWord.setWords(it)
         }
