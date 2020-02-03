@@ -15,20 +15,19 @@ class WordViewModel(application: Application) : AndroidViewModel(application){
     private val dbInstance : WordRoomDatabase?
     private var wordRepository : WordRepository
 
-    private var _words : MutableLiveData<List<Word>>? = null
+    private var _words : LiveData<List<Word>>? = null
 
     init {
         dbInstance = WordRoomDatabase.getDatabase(application.applicationContext,viewModelScope)!!
         wordRepository = WordRepository(dbInstance.wordDao())
-        val result = wordRepository.wordsASC.value
-        _words?.value = result
+        _words = wordRepository.wordsASC
     }
 
     fun insertWord(word:Word) = viewModelScope.launch {
         wordRepository.insert(word)
     }
 
-    fun getWords(): LiveData<List<Word>?>? {
+    fun getWords(): LiveData<List<Word>>? {
         return _words
     }
 

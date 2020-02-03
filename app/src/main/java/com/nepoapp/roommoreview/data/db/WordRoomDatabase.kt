@@ -26,8 +26,8 @@ abstract class WordRoomDatabase : RoomDatabase(){
                 INSTANCE_DABASE = Room.databaseBuilder(
                     ctx.applicationContext,
                     WordRoomDatabase::class.java,
-                    "wordsempledatabase")
-                    .addCallback(WordDatabaseCallback(scope))
+                    "wordsempledatabase.db")
+                    // .addCallback(WordDatabaseCallback(scope))
                     .build()
             }
             return INSTANCE_DABASE

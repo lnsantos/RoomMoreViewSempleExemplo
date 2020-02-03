@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     private fun newWordListener() =  View.OnClickListener {
             var openDialog = AddWordBottomShetFragment.newInstance().apply {
                 show(supportFragmentManager,AddWordBottomShetFragment::class.java.name)
+                sharedViewModel(viewModel)
             }
         }
 

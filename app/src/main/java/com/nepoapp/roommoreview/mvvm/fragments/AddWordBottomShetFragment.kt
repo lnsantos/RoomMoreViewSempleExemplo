@@ -22,6 +22,10 @@ class AddWordBottomShetFragment : BottomSheetDialogFragment(){
             = AddWordBottomShetFragment()
     }
 
+    fun sharedViewModel(sharedViewModel : WordViewModel){
+        viewModel = sharedViewModel
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,13 +34,10 @@ class AddWordBottomShetFragment : BottomSheetDialogFragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WordViewModel::class.java)
         button_save.setOnClickListener(listenerSaveNewWord())
-
     }
 
     private fun listenerSaveNewWord() = View.OnClickListener {
-
             viewModel.insertWord(Word(edit_word.text.trim().toString()))
             dismiss()
     }
