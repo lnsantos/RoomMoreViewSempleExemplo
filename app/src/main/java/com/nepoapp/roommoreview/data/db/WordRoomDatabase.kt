@@ -47,8 +47,8 @@ abstract class WordRoomDatabase : RoomDatabase(){
         }
 
         suspend fun insertWhenAppIsOpen(wordDao: WordDao){
-            var calendar = Calendar.getInstance()
-            var newWord : Word = Word(calendar.time.toString())
+            val calendar = Calendar.getInstance()
+            val newWord  = Word("Abriu o Aplicativo em : " + calendar.time.toString())
             wordDao.insert(newWord)
         }
     }
